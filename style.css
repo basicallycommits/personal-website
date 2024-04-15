@@ -202,3 +202,10 @@ nav ul li a:hover::after {
     transform: translateY(-10px);
 
 }
+
+/* --------------css for small screen------------ */
+@media only screen and (max-width: 600px) {
+    #header {
+        background-image: url(images/phone-background.png);
+    }
+}
