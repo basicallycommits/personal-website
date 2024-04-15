@@ -50,20 +50,50 @@
                         can make any story work. I once told a woman I was Kevin Costner, and it worked because I
                         believed it. </p>
                     <div class="tab-titles">
-                        <p class="tab-links active-link">Skills</p>
-                        <p class="tab-links">Experience</p>
-                        <p class="tab-links">Education</p>
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
                     </div>
-                    <div class="tab-contents">
+                    <div class="tab-contents active-tab" id="skills">
                         <ul>
                             <li><span>UI/UX</span><br>Designing web/app interfaces</li>
                             <li><span>Web Development</span><br>Web app development</li>
                             <li><span>App Development</span><br>Building Android/iOS apps</li>
                         </ul>
                     </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2021 - Current</span><br>Insert experience</li>
+                            <li><span>2019 - 2021</span><br>Guy</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2022 - Current</span><br>BE (Hons) in Software Engineering at<br>the University of
+                                Auckland</li>
+                            <li><span>2019 - 2022</span><br>Insert text</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <script>
+            var tablinks = document.getElementsByClassName('tab-links');
+            var tabcontents = document.getElementsByClassName('tab-contents');
+            function opentab(tabname) {
+                // first, hide all tabs
+                for (tablink of tablinks) {
+                    tablink.classList.remove("active-link");
+                }
+                for (tabcontent of tabcontents) {
+                    tabcontent.classList.remove("active-tab");
+                }
+                // underline the clicked tab and show the corresponding content
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+        </script>
 </body>
 
 </html>
